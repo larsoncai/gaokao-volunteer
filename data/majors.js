@@ -1,0 +1,37 @@
+window.MAJOR_CATALOG = {
+  cs: { name: "计算机科学与技术", field: "信息技术", level: "重点", score: 96, color: "#2c7a67", fit: ["tech", "graduate"], outlook: "软件基础、系统能力和转向弹性都强；普通学生也必须靠项目和实习说话。", study: "本科可就业，冲研发岗读研更稳。", aiRisk: "低到中：低端编码被压缩，系统设计与行业结合更值钱。" },
+  software: { name: "软件工程", field: "信息技术", level: "重点", score: 93, color: "#2c7a67", fit: ["tech"], outlook: "岗位多、竞争大，学校平台加实习决定上限。", study: "本科可就业。", aiRisk: "中：重复开发受AI影响，工程能力仍有壁垒。" },
+  cyber: { name: "网络空间安全", field: "信息技术", level: "重点", score: 91, color: "#2c7a67", fit: ["tech", "public"], outlook: "政企安全、攻防、合规均有需求，但不能只背证书。", study: "本科可就业，核心研发建议读研。", aiRisk: "低。" },
+  data: { name: "数据科学与大数据技术", field: "信息技术", level: "条件", score: 82, color: "#d19a35", fit: ["tech", "graduate"], outlook: "岗位名称很热，真正门槛是数学、数据库和工程，不是会调包。", study: "读研更有竞争力。", aiRisk: "中。" },
+  ai: { name: "人工智能", field: "信息技术", level: "条件", score: 88, color: "#d19a35", fit: ["tech", "graduate"], outlook: "未来十年有需求，但本科专业质量差异巨大，优先计算机强校。", study: "高质量算法岗基本需要读研。", aiRisk: "低：工具会变，理论与工程能力仍稀缺。" },
+  electronic: { name: "电子信息工程", field: "电子电气", level: "重点", score: 95, color: "#2c7a67", fit: ["tech", "graduate"], outlook: "通信、芯片、汽车电子、工业控制均可去，就业面宽。", study: "本科可做工程岗，研发岗读研更优。", aiRisk: "低。" },
+  automation: { name: "自动化", field: "电子电气", level: "重点", score: 94, color: "#2c7a67", fit: ["tech"], outlook: "制造业数字化、机器人与控制系统的交叉入口，行业迁移能力强。", study: "本科可就业。", aiRisk: "低。" },
+  electrical: { name: "电气工程及其自动化", field: "电子电气", level: "重点", score: 97, color: "#2c7a67", fit: ["tech", "public"], outlook: "电网、能源、装备制造都有稳定需求，学校行业背景很重要。", study: "本科可就业，电网竞争看学校与地域。", aiRisk: "低。" },
+  chip: { name: "集成电路设计与集成系统", field: "电子电气", level: "重点", score: 95, color: "#2c7a67", fit: ["tech", "graduate"], outlook: "产业周期波动，但技术壁垒高；强校、强实验室更值钱。", study: "设计研发通常建议读研。", aiRisk: "低。" },
+  energy: { name: "能源与动力工程", field: "先进制造", level: "重点", score: 89, color: "#2c7a67", fit: ["tech"], outlook: "电力、储能、热能与装备行业出口明确，优先行业强校。", study: "本科可就业。", aiRisk: "低。" },
+  mechanical: { name: "机械工程 / 智能制造", field: "先进制造", level: "条件", score: 84, color: "#d19a35", fit: ["tech"], outlook: "岗位数量稳定，起薪不一定炸裂，城市和行业比专业名字更重要。", study: "本科可就业，研发方向建议读研。", aiRisk: "低到中。" },
+  vehicle: { name: "车辆工程", field: "先进制造", level: "条件", score: 87, color: "#d19a35", fit: ["tech"], outlook: "新能源车带来软件、电子、电控交叉机会，传统机械路线要升级。", study: "本科可就业。", aiRisk: "低到中。" },
+  materials: { name: "材料科学与工程", field: "先进制造", level: "条件", score: 73, color: "#d19a35", fit: ["graduate"], outlook: "学校和细分方向决定价值；半导体、复合材料、能源材料优于泛材料。", study: "多数研发岗位需要读研。", aiRisk: "低。" },
+  math: { name: "数学与应用数学", field: "基础研究", level: "条件", score: 80, color: "#d19a35", fit: ["teacher", "graduate"], outlook: "不是直接就业专业，但可转计算机、统计、金融或教师路线。", study: "通常需要读研或叠加技能。", aiRisk: "低。" },
+  physics: { name: "物理学", field: "基础研究", level: "条件", score: 77, color: "#d19a35", fit: ["teacher", "graduate"], outlook: "适合师范、芯片材料和科研深造，不适合只想本科高薪的人。", study: "读研必要性高。", aiRisk: "低。" },
+  stat: { name: "统计学", field: "基础研究", level: "条件", score: 84, color: "#d19a35", fit: ["tech", "graduate"], outlook: "配合编程和行业知识有价值，只学理论就业出口偏窄。", study: "建议读研或强化编程。", aiRisk: "中。" },
+  teacherMath: { name: "数学与应用数学（师范）", field: "师范教育", level: "重点", score: 95, color: "#2c7a67", fit: ["teacher"], outlook: "公费师范、优师专项或强师范平台优先，目标是确定性而不是高薪神话。", study: "公费师范本科可按政策就业。", aiRisk: "低。" },
+  teacherPhysics: { name: "物理学（师范）", field: "师范教育", level: "重点", score: 94, color: "#2c7a67", fit: ["teacher"], outlook: "高中物理师资有学科壁垒，优先部属师范和明确的公费项目。", study: "公费师范本科可按政策就业。", aiRisk: "低。" },
+  clinical: { name: "临床医学", field: "医学健康", level: "重点", score: 94, color: "#2c7a67", fit: ["medicine", "graduate"], outlook: "需求长期存在，但培养周期、规培和地域门槛都很高。", study: "至少接受长学制和规培。", aiRisk: "低。" },
+  stomatology: { name: "口腔医学", field: "医学健康", level: "重点", score: 96, color: "#2c7a67", fit: ["medicine"], outlook: "专业壁垒强，但优质岗位竞争加剧，城市与院校层次重要。", study: "长期培养。", aiRisk: "低。" },
+  biomedical: { name: "生物医学工程", field: "医学健康", level: "条件", score: 76, color: "#d19a35", fit: ["graduate"], outlook: "医工交叉听着漂亮，真正出口依赖电子、算法或器械工程能力。", study: "建议读研。", aiRisk: "低到中。" },
+  law: { name: "法学", field: "经管法政", level: "条件", score: 82, color: "#d19a35", fit: ["public", "graduate"], outlook: "考公、法考和平台三道筛子，五院四系或强985/211更值钱。", study: "法考是关键门槛。", aiRisk: "中：基础检索和文书工作受影响。" },
+  finance: { name: "金融学", field: "经管法政", level: "条件", score: 69, color: "#d19a35", fit: ["public", "graduate"], outlook: "高度看学校、城市和家庭资源，普通平台别被专业名字忽悠。", study: "名校读研可改善平台。", aiRisk: "中到高。" },
+  accounting: { name: "会计学", field: "经管法政", level: "条件", score: 75, color: "#d19a35", fit: ["public"], outlook: "岗位多但基础核算受自动化挤压，证书、审计和业务理解决定上限。", study: "本科可就业。", aiRisk: "中到高。" },
+  chemistry: { name: "化学类", field: "基础研究", level: "高风险", score: 52, color: "#bd4d40", fit: ["graduate"], outlook: "本科对口岗位质量一般，实验室和读研方向决定出口。", study: "读研必要性高。", aiRisk: "低，但岗位供给有限。" },
+  biology: { name: "生物科学 / 生物工程", field: "基础研究", level: "高风险", score: 48, color: "#bd4d40", fit: ["graduate"], outlook: "科研故事很大，本科就业口很窄；不接受深造就别冲动。", study: "通常需要硕博。", aiRisk: "低，但培养周期长。" },
+  environment: { name: "环境科学与工程", field: "先进制造", level: "高风险", score: 50, color: "#bd4d40", fit: ["public", "graduate"], outlook: "岗位稳定但薪资上限和地域差异明显，考公或读研路线更清楚。", study: "建议提前锁定考公或专业资质。", aiRisk: "低。" },
+  civil: { name: "土木工程", field: "先进制造", level: "高风险", score: 45, color: "#bd4d40", fit: ["public"], outlook: "传统地产基建红利减弱，细分到智能建造、交通或水利才更有方向。", study: "本科可就业，但行业选择关键。", aiRisk: "低。" },
+  journalism: { name: "新闻传播学类", field: "经管法政", level: "高风险", score: 43, color: "#bd4d40", fit: ["public"], outlook: "就业高度依赖平台、作品和实习，专业壁垒弱，转运营很常见。", study: "本科可就业但竞争激烈。", aiRisk: "高。" },
+  business: { name: "工商管理", field: "经管法政", level: "高风险", score: 46, color: "#bd4d40", fit: ["public"], outlook: "本科没有直接管理岗，容易落入泛运营和销售，必须叠加硬技能。", study: "不建议为就业单独读研。", aiRisk: "高。" },
+  language: { name: "外国语言文学 / 小语种", field: "经管法政", level: "高风险", score: 44, color: "#bd4d40", fit: ["public"], outlook: "机器翻译压缩基础岗位，语言必须叠加法律、贸易或技术。", study: "复合培养比单纯读研重要。", aiRisk: "高。" },
+  textile: { name: "纺织工程 / 功能材料", field: "先进制造", level: "条件", score: 74, color: "#d19a35", fit: ["tech", "graduate"], outlook: "在东华等顶尖平台可对接高性能纤维、医疗和航空材料，换学校价值会变。", study: "研发方向建议读研。", aiRisk: "低。" }
+};
+
+window.FUTURE_MAJOR_KEYS = ["electrical", "electronic", "automation", "chip", "cs", "energy"];
+window.RISK_MAJOR_KEYS = ["biology", "chemistry", "environment", "civil", "journalism", "business", "language"];
