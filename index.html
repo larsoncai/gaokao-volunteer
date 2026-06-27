@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="面向湖北考生的高考志愿历史数据辅助工具，按省内位次筛选冲稳保院校与专业方向。">
+  <title>别浪费这一分｜湖北高考志愿助手</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="返回页面顶部">
+      <span class="brand-mark">志</span>
+      <span><strong>别浪费这一分</strong><small>湖北高考志愿助手 · 样本版</small></span>
+    </a>
+    <div class="header-meta"><span class="live-dot"></span>数据基准：2025湖北普通批</div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">位次优先 · 就业倒推 · 风险说透</p>
+        <h1>分数只管进门，<br><em>专业决定你往哪儿走。</em></h1>
+        <p class="hero-lead">输入成绩和省内位次，筛出能报的985、211/双一流和传统重点本科。不给“保证录取”，只把历史位置、专业出口和调剂风险摆到桌面上。</p>
+        <div class="principle-row">
+          <span>01 看位次，不硬比分数</span>
+          <span>02 看中位数，不看天才案例</span>
+          <span>03 看专业组，不只看校名</span>
+        </div>
+      </div>
+
+      <form class="finder-card" id="finder-form" novalidate>
+        <div class="finder-title">
+          <div><span>快速定位</span><h2>把你的真实情况填进来</h2></div>
+          <span class="step-badge">1 / 2</span>
+        </div>
+
+        <div class="form-grid">
+          <label class="field"><span>考生省份</span><select id="candidate-province"><option value="湖北">湖北</option></select></label>
+          <label class="field"><span>高考年份</span><select id="exam-year"><option value="2026">2026届</option></select></label>
+          <label class="field"><span>首选科目</span><select id="subject"><option value="物理">物理</option><option value="历史">历史</option></select></label>
+          <label class="field"><span>再选科目</span><select id="elective"><option value="化学">含化学</option><option value="不限">未选化学 / 不限</option></select></label>
+          <label class="field"><span>高考总分</span><input id="score" type="number" min="0" max="750" value="625" inputmode="numeric" required><small class="error" id="score-error"></small></label>
+          <label class="field"><span>湖北省内位次</span><input id="rank" type="number" min="1" value="11280" inputmode="numeric" required><small class="error" id="rank-error"></small></label>
+        </div>
+
+        <fieldset class="field-group">
+          <legend>想去哪些地区 <button type="button" id="select-all-regions">选择全国主要地区</button></legend>
+          <div class="chip-options" id="province-options"></div>
+        </fieldset>
+
+        <fieldset class="field-group">
+          <legend>毕业后优先要什么</legend>
+          <div class="goal-options">
+            <label><input type="radio" name="goal" value="tech" checked><span>技术就业<small>企业 / 研发</small></span></label>
+            <label><input type="radio" name="goal" value="teacher"><span>编制师范<small>数学 / 物理</small></span></label>
+            <label><input type="radio" name="goal" value="public"><span>考公法政<small>体制路线</small></span></label>
+            <label><input type="radio" name="goal" value="medicine"><span>医学培养<small>接受长学制</small></span></label>
+            <label><input type="radio" name="goal" value="graduate"><span>考研深造<small>科研 / 转方向</small></span></label>
+          </div>
+        </fieldset>
+
+        <label class="long-study"><input id="long-study" type="checkbox"><span>家庭能够支持读研或长期培养</span></label>
+        <button class="primary-button" type="submit"><span>开始筛选志愿</span><b>→</b></button>
+        <p class="form-note">本工具使用公开历史样本，不替代当年招生计划、体检要求和高校章程。</p>
+      </form>
+    </section>
+
+    <section class="results-section hidden" id="results" aria-live="polite">
+      <div class="result-head">
+        <div><p class="eyebrow">你的筛选结果</p><h2 id="result-title">先看结论，再看学校</h2></div>
+        <button class="ghost-button" id="edit-profile" type="button">修改条件</button>
+      </div>
+
+      <div class="verdict-card">
+        <div class="verdict-number"><span id="candidate-score">625</span><small>分</small></div>
+        <div class="verdict-main"><p id="candidate-summary"></p><h3 id="verdict-text"></h3><div class="verdict-tags" id="verdict-tags"></div></div>
+        <div class="verdict-quote"><span>一句话</span><p id="verdict-quote"></p></div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card reach"><small>冲一冲</small><strong id="reach-count">0</strong><span>历史门槛高于当前位次</span></div>
+        <div class="stat-card match"><small>稳一稳</small><strong id="match-count">0</strong><span>与历史位置基本匹配</span></div>
+        <div class="stat-card safe"><small>保一保</small><strong id="safe-count">0</strong><span>位次留有安全边际</span></div>
+        <div class="stat-card total"><small>样本结果</small><strong id="total-count">0</strong><span>不是全国完整院校数量</span></div>
+      </div>
+
+      <div class="toolbar">
+        <div class="filter-tabs" id="risk-filter">
+          <button class="active" data-value="all">全部</button><button data-value="冲">冲</button><button data-value="稳">稳</button><button data-value="保">保</button>
+        </div>
+        <label>院校层次<select id="tier-filter"><option value="all">全部层次</option><option value="985">985</option><option value="211">211 / 双一流</option><option value="key">传统重点本科</option></select></label>
+        <label>专业方向<select id="major-filter"><option value="all">全部方向</option><option value="信息技术">信息技术</option><option value="电子电气">电子电气</option><option value="先进制造">先进制造</option><option value="师范教育">师范教育</option><option value="医学健康">医学健康</option><option value="经管法政">经管法政</option><option value="基础研究">基础研究</option></select></label>
+        <label>排序<select id="sort-filter"><option value="fit">按匹配度</option><option value="rank">按历史位次</option><option value="employment">按就业优先级</option></select></label>
+      </div>
+
+      <div class="result-layout">
+        <div>
+          <div class="list-heading"><h3>院校建议</h3><span id="visible-count"></span></div>
+          <div class="college-list" id="college-list"></div>
+          <div class="empty-state hidden" id="empty-state"><strong>当前筛选没有匹配样本</strong><p>扩大目标地区或切换院校层次再看，别让筛选条件把路堵死。</p></div>
+        </div>
+
+        <aside class="side-panel">
+          <div class="panel-card"><span class="panel-kicker green">未来十年重点</span><h3>优先找“有壁垒”的专业</h3><div id="future-majors" class="major-mini-list"></div></div>
+          <div class="panel-card warning"><span class="panel-kicker red">风险雷达</span><h3>这些专业不是不能读，是不能稀里糊涂读</h3><div id="risk-majors" class="major-mini-list"></div></div>
+          <div class="panel-card source-card"><span class="panel-kicker">数据说明</span><h3>这张表从哪儿来</h3><p>录取门槛以湖北省2025年普通批平行志愿投档线为主，位次由2025一分一段表对应。专业为代表性方向，报考前必须核对2026招生计划。</p><button type="button" id="show-sources">查看来源与边界</button></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="method-section">
+      <div><p class="eyebrow">推荐方法</p><h2>这个工具怎么判断，不藏着掖着</h2></div>
+      <div class="method-grid">
+        <article><span>01</span><h3>位次是主尺子</h3><p>不同年份题目难度会变，分数不能硬比。系统用省内位次对齐历史最低门槛。</p></article>
+        <article><span>02</span><h3>专业组单独看</h3><p>学校最低线常由冷门组拉低。页面显示具体专业组，并提示“能进校≠能进热门专业”。</p></article>
+        <article><span>03</span><h3>就业目标会改排序</h3><p>想进企业、当老师、学医或考公，最优专业完全不是一套答案。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="source-dialog">
+    <form method="dialog"><button class="dialog-close" aria-label="关闭">×</button></form>
+    <p class="eyebrow">来源与边界</p><h2>数据能帮你排雷，不能替你签字</h2><div id="source-list"></div>
+    <div class="dialog-warning"><strong>重要提醒</strong><p>2026招生专业组、选科要求、计划人数、学费和体检限制可能变化。最终以湖北省教育考试院和高校招生章程为准。</p></div>
+  </dialog>
+
+  <footer><div><strong>别浪费这一分</strong><span>湖北高考志愿助手 · 公开历史样本版</span></div><p>不承诺录取，不制造焦虑，不收集敏感信息。</p></footer>
+
+  <script src="data/majors.js"></script>
+  <script src="data/admissions-hubei.js"></script>
+  <script src="data/sources.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
