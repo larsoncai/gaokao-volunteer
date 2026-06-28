@@ -78,10 +78,25 @@ button { cursor: pointer; }
 .field input, .field select, .toolbar select { border: 1px solid var(--line); border-radius: 10px; padding: 11px 12px; color: var(--ink); background: white; outline: none; transition: .2s; }
 .field input:focus, .field select:focus, .toolbar select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(27,83,107,.1); }
 .error { color: var(--red); min-height: 0; font-weight: 600; }
+.data-hint { min-height: 18px; color: var(--muted); font-size: 10px; font-weight: 600; line-height: 1.35; }
+.data-hint.ready { color: var(--green); }.data-hint.pending { color: #9a6a12; }
+.subject-picker-field { align-content: start; }
+.subject-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.subject-options label input { position: absolute; opacity: 0; }
+.subject-options label span { display: grid; min-height: 43px; place-items: center; padding: 7px 4px; border: 1px solid var(--line); border-radius: 9px; background: white; font-size: 11px; transition: .18s; }
+.subject-options label input:checked + span { color: white; background: var(--blue); border-color: var(--blue); }
+.rank-result { display: grid; align-content: center; gap: 3px; min-height: 88px; padding: 13px 15px; border: 1px dashed var(--line); border-radius: 12px; background: #f5f3ed; }
+.rank-result span { color: var(--muted); font-size: 11px; font-weight: 800; }
+.rank-result strong { font-size: 18px; }
+.rank-result small { color: var(--muted); font-size: 10px; line-height: 1.35; }
+.rank-result.ready { border-style: solid; border-color: rgba(44,122,103,.35); background: #edf7f2; }
+.rank-result.ready strong { color: var(--green); }
+.rank-result.unavailable { border-color: rgba(189,77,64,.3); background: #fff4ee; }
+.rank-result.unavailable strong { color: var(--red); }
 .field-group { border: 0; padding: 0; margin: 21px 0 0; }
 .field-group legend { width: 100%; font-size: 13px; font-weight: 800; margin-bottom: 10px; display: flex; justify-content: space-between; }
 .field-group legend button { border: 0; background: none; color: var(--blue); font-size: 12px; padding: 0; }
-.chip-options { display: flex; flex-wrap: wrap; gap: 8px; max-height: 88px; overflow: auto; padding: 2px; }
+.chip-options { display: flex; flex-wrap: wrap; gap: 8px; max-height: 126px; overflow: auto; padding: 2px; }
 .chip-options label input { position: absolute; opacity: 0; }
 .chip-options label span { display: block; padding: 7px 12px; border: 1px solid var(--line); border-radius: 999px; background: white; font-size: 12px; transition: .18s; }
 .chip-options label input:checked + span { color: white; background: var(--navy); border-color: var(--navy); }
