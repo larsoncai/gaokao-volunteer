@@ -1,4 +1,7 @@
 window.DATA_SOURCES = [
+  { title: "教育部阳光高考：2026各省一分一段表汇总", url: "https://gaokao.chsi.com.cn/gkxx/ss/202606/20260624/2293845984.html", note: "全国入口，链接到各省教育考试机构发布的2026普通类分数段统计。" },
+  { title: "湖北省2026年普通高考一分一段表", url: "https://www.hbea.edu.cn/html/2026-06/15962.html", note: "湖北省教育考试院，2026年6月25日发布；用于分数自动换算物理类或历史类累计位次。" },
+  { title: "教育部2026年全国普通高等学校名单", url: "https://www.moe.gov.cn/jyb_xxgk/s5743/s5744/202606/t20260618_1441074.html", note: "截至2026年6月17日，全国本科学校1412所；用于院校所在地、主管部门和办学性质校验。" },
   { title: "湖北省2025年本科普通批（首选物理）投档线", url: "https://jyt.hubei.gov.cn/bmdt/ztzl/gxzs/zszy/zsfw/202507/t20250721_5727304.shtml", note: "湖北省教育厅，普通批院校专业组最低投档分。" },
   { title: "湖北省2025年本科普通批（首选历史）投档线", url: "https://jyt.hubei.gov.cn/bmdt/ztzl/gxzs/zszy/zsfw/202507/t20250721_5727303.shtml", note: "湖北省教育厅，历史类专业组最低投档分。" },
   { title: "湖北省2025年普通高考一分一段表", url: "https://www.hbea.edu.cn/html/2025-06/15292.html", note: "湖北省教育考试院，用于把投档分换算为当年累计位次。" },
