@@ -91,6 +91,10 @@ button { cursor: pointer; }
 .rank-result small { color: var(--muted); font-size: 10px; line-height: 1.35; }
 .rank-result.ready { border-style: solid; border-color: rgba(44,122,103,.35); background: #edf7f2; }
 .rank-result.ready strong { color: var(--green); }
+.rank-result.loading { border-style: solid; border-color: rgba(27,83,107,.25); background: #edf4f6; }
+.rank-result.loading strong { color: var(--blue); }
+.rank-result.historical { border-style: solid; border-color: rgba(213,155,46,.38); background: #fff8e8; }
+.rank-result.historical strong { color: #9a6a12; }
 .rank-result.unavailable { border-color: rgba(189,77,64,.3); background: #fff4ee; }
 .rank-result.unavailable strong { color: var(--red); }
 .field-group { border: 0; padding: 0; margin: 21px 0 0; }

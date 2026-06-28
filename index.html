@@ -41,7 +41,7 @@
           <label class="field" id="primary-subject-field"><span id="primary-subject-label">首选科目</span><select id="subject"></select></label>
           <div class="field subject-picker-field" id="elective-field"><span id="elective-label">再选科目（选2科）</span><div class="subject-options" id="elective-options"></div><small class="error" id="subject-error"></small></div>
           <label class="field"><span>高考总分</span><input id="score" type="number" min="0" max="750" value="625" inputmode="numeric" required><small class="error" id="score-error"></small></label>
-          <div class="rank-result" id="rank-result" aria-live="polite"><span>2026官方位次</span><strong id="rank-value">等待输入</strong><small id="rank-detail">选择省份、科类并输入分数后自动查询</small></div>
+          <div class="rank-result" id="rank-result" aria-live="polite"><span id="rank-label">位次数据</span><strong id="rank-value">等待输入</strong><small id="rank-detail">选择省份、科类并输入分数后自动查询</small></div>
         </div>
 
         <fieldset class="field-group">
@@ -63,7 +63,7 @@
 
         <label class="long-study"><input id="long-study" type="checkbox"><span>家庭能够支持读研或长期培养</span></label>
         <button class="primary-button" type="submit"><span>开始筛选志愿</span><b>→</b></button>
-        <p class="form-note">只使用已核验的官方数据。未完成核验的考生省份会明确显示“暂不可生成建议”。</p>
+        <p class="form-note">已发布省份优先使用2026一分一段；缺失时回退2025历史数据，并在结果中明确标注。</p>
       </form>
     </section>
 
@@ -83,12 +83,12 @@
         <div class="stat-card reach"><small>冲一冲</small><strong id="reach-count">0</strong><span>历史门槛高于当前位次</span></div>
         <div class="stat-card match"><small>稳一稳</small><strong id="match-count">0</strong><span>与历史位置基本匹配</span></div>
         <div class="stat-card safe"><small>保一保</small><strong id="safe-count">0</strong><span>位次留有安全边际</span></div>
-        <div class="stat-card total"><small>样本结果</small><strong id="total-count">0</strong><span>不是全国完整院校数量</span></div>
+        <div class="stat-card total"><small>建议结果</small><strong id="total-count">0</strong><span>以当前目标省份和数据为准</span></div>
       </div>
 
       <div class="toolbar">
         <div class="filter-tabs" id="risk-filter">
-          <button class="active" data-value="all">全部</button><button data-value="冲">冲</button><button data-value="稳">稳</button><button data-value="保">保</button>
+          <button class="active" data-value="all">全部</button><button data-value="冲">冲</button><button data-value="稳">稳</button><button data-value="保">保</button><button data-value="参考">参考</button>
         </div>
         <label>院校层次<select id="tier-filter"><option value="all">全部本科</option><option value="985">985</option><option value="211">211 / 双一流</option><option value="public">普通公办</option><option value="private">民办本科</option></select></label>
         <label>专业方向<select id="major-filter"><option value="all">全部方向</option><option value="信息技术">信息技术</option><option value="电子电气">电子电气</option><option value="先进制造">先进制造</option><option value="师范教育">师范教育</option><option value="医学健康">医学健康</option><option value="经管法政">经管法政</option><option value="基础研究">基础研究</option></select></label>
@@ -105,7 +105,7 @@
         <aside class="side-panel">
           <div class="panel-card"><span class="panel-kicker green">未来十年重点</span><h3>优先找“有壁垒”的专业</h3><div id="future-majors" class="major-mini-list"></div></div>
           <div class="panel-card warning"><span class="panel-kicker red">风险雷达</span><h3>这些专业不是不能读，是不能稀里糊涂读</h3><div id="risk-majors" class="major-mini-list"></div></div>
-          <div class="panel-card source-card"><span class="panel-kicker">数据说明</span><h3>真实数据，不拿估算凑数</h3><p>2026位次来自各省官方一分一段表；历史投档数据按考生省份独立核验。暂未完成的省份只展示状态，不生成虚假推荐。</p><button type="button" id="show-sources">查看来源与边界</button></div>
+          <div class="panel-card source-card"><span class="panel-kicker">数据说明</span><h3>年份写清楚，数据不混用</h3><p>位次优先使用2026一分一段，缺失时回退2025；院校建议使用公开历史投档数据。每张卡片都会显示年份与数据类型。</p><button type="button" id="show-sources">查看来源与边界</button></div>
         </aside>
       </div>
     </section>
